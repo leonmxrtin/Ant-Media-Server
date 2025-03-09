@@ -2263,7 +2263,7 @@ public class AppSettings implements Serializable{
 	 * In initialization no matter if spring or field definition is effective, the important thing is that having some random value
 	 */
 	@Value("${clusterCommunicationKey:${"+SETTINGS_CLUSTER_COMMUNICATION_KEY+ ":#{ T(org.apache.commons.lang3.RandomStringUtils).randomAlphanumeric(32)}}}")
-	private String clusterCommunicationKey = RandomStringUtils.randomAlphanumeric(32);
+	private String clusterCommunicationKey = RandomStringUtils.secure().randomAlphanumeric(32);
 
 	/**
 	 * Enables the ID3 Tag support for HLS
@@ -2321,7 +2321,7 @@ public class AppSettings implements Serializable{
 	 *
 	 */
 	@Value("${subscriberAuthenticationKey:#{ T(org.apache.commons.lang3.RandomStringUtils).randomAlphanumeric(32)}}")
-	private String subscriberAuthenticationKey = RandomStringUtils.randomAlphanumeric(32);
+	private String subscriberAuthenticationKey = RandomStringUtils.secure().randomAlphanumeric(32);
 
 
 
